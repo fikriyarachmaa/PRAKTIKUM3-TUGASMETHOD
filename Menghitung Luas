@@ -1,0 +1,42 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+      Scanner scan = new Scanner(System.in);
+        int choice = scan.nextInt();
+        
+        if (choice == 1) { //persegi
+            double sisi = scan.nextDouble();
+            persegi(sisi);
+        } else if (choice == 2) { //segitiga
+            double a = scan.nextDouble();
+            double t = scan.nextDouble();
+            segitiga(a,t);
+        } else if (choice == 3) { //lingkaran
+            double r = scan.nextDouble();
+            lingkaran(r);
+        } else {
+             System.out.println("Input yang anda masukan tidak sesuai");
+        }
+    }
+    public static void persegi (double sisi) {
+       int lp = (int) (sisi*sisi);
+       System.out.println(lp);
+    }
+    public static void segitiga (double a, double t) {
+       int ls = (int) ((a*t)/2);
+        System.out.println(ls);
+    }
+   public static void lingkaran (double r) {
+        double lg;
+        if (r % 7 == 0) {
+           lg = 22/7*r*r;
+            System.out.println(lg);
+        } else {
+           lg = (int) (3.14*r*r);
+            System.out.println(lg);
+        }
+    }
+}
