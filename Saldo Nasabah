@@ -1,0 +1,23 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner (System.in);
+                
+        double sr = scan.nextDouble();  //saldo rekening
+        double st = scan.nextDouble();  //saldo tabungan
+        
+        System.out.println(saldoAkhir(sr, st));
+    }
+    public static double admin (double sr, double st) {     //pengurangan biaya admin
+        return sr+st-7000;
+    }
+    public static double bonus (double sr, double st) {     //hitung bonus
+        return 0.0005*admin(sr, st);
+    }
+    public static double saldoAkhir (double sr, double st) {    //hitung saldo akhir
+        return admin(sr, st)+bonus(sr, st);
+    }
+}
