@@ -1,0 +1,31 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+      Scanner scan = new Scanner(System.in);
+        String kata = scan.nextLine();
+        int nGeser = scan.nextInt();
+        
+        System.out.println(ubah(kata, nGeser));
+   
+    } public static String ubah (String kata, int nGeser) {
+         String alfabet = "";
+        for (int i = 0; i < kata.length(); i++) {
+            int c = kata.charAt(i);
+            if (Character.isUpperCase(c)) {
+                c = c + (nGeser % 26);
+                if (c > 'Z')
+                    c = c - 26;
+            } else if (Character.isLowerCase(c)) {
+                c = c + (nGeser % 26);
+                if (c > 'z')
+                    c = c - 26;
+            }
+            alfabet += (char) c;
+        }
+        return alfabet;
+    
+    }
+}
